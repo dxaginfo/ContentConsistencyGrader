@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Content Consistency Grader</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Content Consistency Grader</h1>
+      <p>Analyze how consistently your message is delivered across different platforms</p>
+    </header>
+
+    <main>
+      <section id="input-section" class="card">
+        <h2>Input Your Content</h2>
+        <p>Paste the same core message as it appears on different platforms to analyze consistency.</p>
+        
+        <form id="content-form">
+          <div id="platform-inputs">
+            <!-- Default platform inputs -->
+            <div class="platform-input">
+              <label for="website-content">Website</label>
+              <textarea id="website-content" name="website" placeholder="Paste content from your website here..."></textarea>
+            </div>
+            
+            <div class="platform-input">
+              <label for="twitter-content">Twitter</label>
+              <textarea id="twitter-content" name="twitter" placeholder="Paste content from your Twitter here..."></textarea>
+            </div>
+          </div>
+          
+          <button type="button" id="add-platform" class="secondary-btn">
+            <i class="fas fa-plus"></i> Add Another Platform
+          </button>
+          
+          <button type="submit" id="analyze-btn" class="primary-btn">
+            <i class="fas fa-chart-bar"></i> Analyze Consistency
+          </button>
+        </form>
+      </section>
+
+      <section id="results-section" class="card hidden">
+        <h2>Consistency Analysis Results</h2>
+        
+        <div class="score-container">
+          <div class="score-circle">
+            <span id="consistency-score">--</span>
+            <span class="score-label">Overall Score</span>
+          </div>
+        </div>
+        
+        <div class="results-grid">
+          <div class="result-card">
+            <h3>Sentiment Consistency</h3>
+            <div class="chart-container">
+              <canvas id="sentiment-chart"></canvas>
+            </div>
+            <p id="sentiment-analysis"></p>
+          </div>
+          
+          <div class="result-card">
+            <h3>Keyword Consistency</h3>
+            <div class="chart-container">
+              <canvas id="keyword-chart"></canvas>
+            </div>
+            <p id="keyword-analysis"></p>
+          </div>
+          
+          <div class="result-card">
+            <h3>Tone Consistency</h3>
+            <div class="chart-container">
+              <canvas id="tone-chart"></canvas>
+            </div>
+            <p id="tone-analysis"></p>
+          </div>
+          
+          <div class="result-card">
+            <h3>Content Similarity</h3>
+            <div class="chart-container">
+              <canvas id="similarity-chart"></canvas>
+            </div>
+            <p id="similarity-analysis"></p>
+          </div>
+        </div>
+        
+        <div id="recommendations" class="recommendations">
+          <h3>Recommendations for Improvement</h3>
+          <ul id="recommendation-list">
+            <!-- Recommendations will be added here dynamically -->
+          </ul>
+        </div>
+        
+        <button id="back-to-input" class="secondary-btn">
+          <i class="fas fa-arrow-left"></i> Back to Input
+        </button>
+      </section>
+      
+      <section id="loading-section" class="card hidden">
+        <div class="loading-spinner"></div>
+        <p>Analyzing your content...</p>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Content Consistency Grader | <a href="https://github.com/dxaginfo/ContentConsistencyGrader" target="_blank">GitHub</a></p>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
