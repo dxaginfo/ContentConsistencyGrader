@@ -1,0 +1,32 @@
+{
+  "name": "content-consistency-grader",
+  "version": "0.1.0",
+  "description": "A tool to help brands assess how consistently their message is delivered across different platforms",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "nodemon server/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "natural": "^6.5.0",
+    "compromise": "^14.9.0",
+    "sentiment": "^5.0.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  },
+  "keywords": [
+    "content",
+    "consistency",
+    "brand",
+    "messaging",
+    "analysis",
+    "nlp"
+  ],
+  "author": "",
+  "license": "MIT"
+}
